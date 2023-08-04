@@ -1,4 +1,4 @@
-// let nomes = ["Alana", "Alexia", "Samanta", "Thiago", "Ordilei"]
+let nomes = ["Alana", "Alexia", "Samanta", "Thiago", "Ordilei"]
 //              0         1         2         3          4
 
 // console.log(nomes[0]);
@@ -25,7 +25,7 @@
 // });
 
 
-// const frutas = ["Pera", "Uva", "Maca", "Salada Mista"]
+const frutas = ["Pera", "Uva", "Maca", "Salada Mista"]
 
 // for (let contador = 0; contador < frutas.length; contador++) {
 //     const cadaElement = frutas[contador];
@@ -80,13 +80,73 @@ const prompt = require(`prompt-sync`)()
 
 
 
-let senha;
-do {
-     senha = prompt("Digite sua senha: ")
+// let senha;
+// do {
+//      senha = prompt("Digite sua senha: ")
 
-     if (senha != 123) {
-        console.log("Senha incorreta!!!");
-     }
-     
-} while (senha != "123" );
-console.log("Senha correta!!!");
+//      if (senha != 123) {
+//         console.log("Senha incorreta!!!");
+//      }
+
+// } while (senha != "123" );
+// console.log("Senha correta!!!");
+
+
+function mostrarSalario() {
+   let salary = 1000;
+let contador = 0;
+
+while (salary < 5000) {
+    salary += 100        //salary = salary + 100;
+    contador++;
+
+    console.log("Seu salario ainda é R$" + salary);
+}
+    console.log(contador);
+}
+
+function mostrarFrutas(listafrutas) {
+   listafrutas.forEach(element => {
+      console.log(element);
+   })
+   
+}
+
+function mostrarNomes(listaNomes) {
+   listaNomes.forEach(element => {
+      console.log(element);
+   });
+}
+
+// mostrarNomes(nomes)
+
+function avaliarSenha() {
+   let usuario = {
+      senha:"",
+      nome:""
+
+   };
+   do {
+      usuario.senha = prompt("Digite sua senha: ")
+      usuario.nome = prompt ("Digite seu nome: ")
+      if (usuario.senha != 123 || usuario.nome!= "Marcel") {
+         console.log("Senha incorreta!!!");
+      }
+
+   } while (usuario.senha != "123" || usuario.nome!="Marcel");
+   console.log("Senha correta!!!");
+}
+
+// avaliarSenha()
+
+let resposta = prompt("Digite um numero: ")
+
+if(resposta==1){
+   mostrarNomes(nomes)
+}else if (resposta==2) {
+   avaliarSenha()
+}else if (resposta==3) {
+   mostrarFrutas(frutas)
+}else if (resposta==4) {
+   mostrarSalario()
+}
